@@ -2,9 +2,9 @@ use std::time::Instant;
 
 fn main() {
     let strides = [1, 16];
-    let mut array = vec![0i32; 64 * 1024 * 1024];
 
     for stride in strides {
+        let mut array = vec![0i32; 64 * 1024 * 1024];
         let start = Instant::now();
         workload(&mut array, stride);
         let dur = start.elapsed().as_millis();
